@@ -5,31 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Flat.create!(
-  name: 'Light & Spacious Garden Flat London',
-  address: '10 Clifton Gardens London W9 1DT',
-  description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
-  price_per_night: 75,
-  number_of_guests: 3
-)
-Flat.create!(
-  name: 'New York Penthouse',
-  address: Faker::Address.full_address,
-  description: Faker::Lorem.sentence,
-  price_per_night: Faker::Number.number(digits: 2),
-  number_of_guests: Faker::Number.number(digits: 1)
-)
-Flat.create!(
-  name: 'New York Penthouse',
-  address: Faker::Address.full_address,
-  description: Faker::Lorem.sentence,
-  price_per_night: Faker::Number.number(digits: 2),
-  number_of_guests: Faker::Number.number(digits: 1)
-)
-Flat.create!(
-  name: 'New York Penthouse',
-  address: Faker::Address.full_address,
-  description: Faker::Lorem.sentence,
-  price_per_night: Faker::Number.number(digits: 2),
-  number_of_guests: Faker::Number.number(digits: 1)
-)
+flats = Flat.all
+
+flats.each do |flat|
+  flat.image_url = 'https://picsum.photos/1200/800'
+end
